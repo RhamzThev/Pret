@@ -1,0 +1,23 @@
+* {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --one: #010101;
+    --two: #030303;
+    --three: #070707;
+    --four: #0f0f0f;
+    --five: #1f1f1f;
+    --six: #3f3f3f;
+
+    --seven: #7f7f7f;
+
+    --minus-one: #fdfdfd;
+    --minus-two: #fbfbfb;
+    --minus-three: #f7f7f7;
+    --minus-four: #efefef;
+    --minus-five: #dfdfdf;
+    --minus-six: #bfbfbf;
+}

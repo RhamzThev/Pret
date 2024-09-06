@@ -1,0 +1,9 @@
+{
+    "manifest_version": 3,
+    "name": "Pret",
+    "description": "Pret simplifies selected text into easy-to-understand terms (i.e. layman's terms) for clearer comprehension.",
+    "version": "1.0",
+    "action": {
+        "default_popup": "index.html"
+    }
+}
