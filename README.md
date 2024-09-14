@@ -1,5 +1,7 @@
 # Pret - Google Chrome Extension
 
+https://github.com/user-attachments/assets/90c35a8a-5f0f-4ced-9b98-2901085ae985
+
 ## Overview
 
 **Pret** is a Google Chrome extension designed to simplify selected text into easy-to-understand language, making content more accessible and improving comprehension for all users.
@@ -8,27 +10,28 @@ The project is built using a full-stack setup with a Svelte-based frontend and a
 
 ## Features
 
+- **Enter Input Text for Simplification**: Paste or type your text into Pret, and it will transform it into more accessible language.
+- **Copy Output to Clipboard**: Easily copy the simplified text to your clipboard with a single click for convenient use.
+- **Character Limits**: Input text is limited to 500 characters per submission, with a daily cap of 1500 characters to ensure fair usage.
+- **Text-to-Speech**: Convert the simplified output into speech to listen to the text, enhancing accessibility and comprehension.
+
+## How to Use
+
+1. Enter your text into the input field.
+2. Click the button to simplify the text.
+3. Copy the simplified text to your clipboard or listen to it using the text-to-speech feature.
+
+## Technology
+
 ### Chrome Extension (Frontend)
-- **Simplification of Text**: Highlights and simplifies selected text on any webpage to improve readability and comprehension.
 - **Svelte Framework**: A highly efficient, reactive framework for building user interfaces.
 - **Vite Build Tool**: Provides a fast development environment with Hot Module Replacement (HMR) for seamless changes during development.
 
-### Backend (Server)
+### Server (Backend)
 - **Express.js**: Handles API requests to process and simplify text.
 - **CORS**: Enables secure handling of cross-origin resource sharing for API requests from the Chrome extension.
 - **dotenv**: Manages environment variables securely.
 - **Nodemon**: Automatically restarts the server during development for a smoother workflow.
-
-## Tech Stack
-
-- **Frontend**: 
-  - Svelte v4.2.18
-  - Vite v5.4.1
-- **Backend**: 
-  - Express.js v4.19.2
-  - Nodemon v3.1.4
-  - CORS v2.8.5
-  - dotenv v16.4.5
 
 ## Installation
 
