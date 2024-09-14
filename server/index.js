@@ -1,7 +1,7 @@
 const express = require('express')
 const OpenAI = require('openai')
-
-// const { ElevenLabsClient } = require("elevenlabs");
+const { Readable } = require("stream");
+const { ElevenLabsClient } = require("elevenlabs");
 
 
 
@@ -20,9 +20,7 @@ const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY
 });
 
-// const elevenlabs = new ElevenLabsClient({
-//     apiKey: process.env.ELEVENLABS_API_KEY
-// })
+const elevenlabs = new ElevenLabsClient({ apiKey: process.env.ELEVENLABS_API_KEY })
 
 app.post('/', async (req, res) => {
 
@@ -46,18 +44,20 @@ app.post('/', async (req, res) => {
         model: "gpt-4o-mini",
     });
 
-    const content = chatResponse.choices[0].message.content
+    const content = chatResponse.choices[0].message.content;
 
-    // const voiceResponse = await elevenlabs.generate({
-    //     voice: 'Brian',
-    //     text: content,
-    //     model_id: 'eleven_turbo_v2'
+    const audio = await elevenlabs.generate({
+        voice: 'Brian',
+        text: content,
+        model_id: 'eleven_turbo_v2',
+        output_format: 'mp3_22050_32',
+    })
 
-    // })
+    const audioArrayBuffer = await new Response(audio).arrayBuffer();
 
     res.json({
         "output": content,
-        // "audio": voiceResponse,
+        "audio": Buffer.from(audioArrayBuffer).toString('base64'),
     });
 })
 
